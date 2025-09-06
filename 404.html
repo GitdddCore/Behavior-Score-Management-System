@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>操行分管理系统 - 页面未找到</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f5f7fa;
+            min-height: 100vh;
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .error-container {
+            max-width: 600px;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .error-card {
+            background: transparent;
+            padding: 50px 40px;
+        }
+
+        .error-number {
+            font-size: 4rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-bottom: 20px;
+            line-height: 1;
+            font-family: 'Microsoft YaHei', sans-serif;
+        }
+
+        .error-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .error-description {
+            font-size: 1.1rem;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .error-actions {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        .btn-primary {
+            background: #3498db;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #2980b9;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        }
+
+        .btn-secondary {
+            background: #95a5a6;
+            color: white;
+        }
+
+        .btn-secondary:hover {
+            background: #7f8c8d;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(149, 165, 166, 0.3);
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 30px;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .system-info {
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #ecf0f1;
+        }
+
+        .system-title {
+            font-size: 1.2rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+
+        .system-description {
+            font-size: 0.9rem;
+            color: #95a5a6;
+        }
+
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 3rem;
+            }
+
+            .error-title {
+                font-size: 1.5rem;
+            }
+
+            .error-card {
+                padding: 30px 20px;
+            }
+
+            .error-actions {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <div class="error-card">
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            
+            <div class="error-number">PAGE NOT FOUND</div>
+            <h1 class="error-title">页面未找到</h1>
+            <p class="error-description"><br>请使用下方按钮返回</p>
+            <div class="error-actions">
+                <a href="index.php" class="btn btn-primary">
+                    <i class="fas fa-sign-in-alt"></i> 返回首页
+                </a>
+                <button onclick="goBack()" class="btn btn-secondary">
+                    <i class="fas fa-arrow-left"></i> 返回上页
+                </button>
+            </div>
+            
+            <div class="system-info">
+                <h3 class="system-title">操行分管理系统</h3>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function goBack() {
+            // 检查是否有历史记录
+            if (window.history.length > 1) {
+                window.history.back();
+            } else {
+                // 如果没有历史记录，跳转到首页
+                window.location.href = 'index.php';
+            }
+        }
+
+        // 添加键盘快捷键支持
+        document.addEventListener('keydown', function(event) {
+            // 按ESC键返回上一页
+            if (event.key === 'Escape') {
+                goBack();
+            }
+            // 按Enter键返回首页
+            if (event.key === 'Enter') {
+                window.location.href = 'index.php';
+            }
+        });
+    </script>
+</body>
+</html>

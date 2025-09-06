@@ -1,0 +1,29 @@
+{
+  "database": {
+    "mysql": {
+      "host": "你的MySQL主机地址 | Your MySQL Host",
+      "dbname": "你的MySQL数据库名称 | Your MySQL Name",
+      "username": "你的MySQL数据库用户名 | Your MySQL Username",
+      "password": "你的MySQL数据库密码 | Your MySQL Password",
+      "charset": "utf8mb4"
+    },
+    "redis": {
+      "host": "你的Redis主机地址 | Your Redis Host",
+      "port": 6379,
+      "password": "你的Redis数据库密码 | Your Redis Password",
+      "timeout": 2.5,
+      "databases": {
+        "0": "session",
+        "1": "login_security",
+        "2": "cache"
+      }
+    }
+  },
+  "class": {
+    "name": "班级名称 | Class Name",
+    "teacher": "班主任名称 | Class Teacher Name"
+  },
+  "conduct_score": {
+    "initial_score": 100
+  }
+}

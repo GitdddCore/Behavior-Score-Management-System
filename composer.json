@@ -1,0 +1,16 @@
+{
+    "name": "dddcore/behavior-score-manage-system",
+    "description": "操行分管理系统 | Behavior Score Management System",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "php": ">=7.4",
+        "phpoffice/phpspreadsheet": "^1.29"
+    },
+    "config": {
+        "platform": {
+            "ext-fileinfo": "1.0.0",
+            "ext-zip": "1.0.0"
+        }
+    }
+}
