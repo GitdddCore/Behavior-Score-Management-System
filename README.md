@@ -28,7 +28,11 @@
 
 ### 项目截图:
 
-![AAA](等测试)
+![IMAGE-INDEX](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/index.png)
+![IMAGE-RANK](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/rank.png)
+![IMAGE-PROFILE](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/profile.png)
+![IMAGE-COMMITTEE](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/committee.png)
+![IMAGE-ADMIN](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/admin.png)
 
 ## 如何部署
 

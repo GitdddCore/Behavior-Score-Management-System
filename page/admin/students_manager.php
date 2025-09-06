@@ -1711,7 +1711,7 @@ if ($data['success']) {
     <div class="container">
         <div class="header">
             <h1>学生管理</h1>
-            <p>操行分管理系统 | Conduct Score System</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
 
         <!-- 操作栏 -->

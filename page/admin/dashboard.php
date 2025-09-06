@@ -840,7 +840,7 @@ if (!isset($_GET['ajax'])) {
     <div class="container">
         <div class="header">
             <h1>管理员仪表板</h1>
-            <p>操行分管理系统 | Conduct Score System</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
         
         <!-- 移动端功能限制提示 -->

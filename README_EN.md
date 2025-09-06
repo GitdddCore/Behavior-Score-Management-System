@@ -30,7 +30,12 @@ The Behavior Score Management System (BSMS) is a web application that provides t
 
 ### Project Screenshots:
 
-![AAA](under testing)
+![IMAGE-INDEX](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/index.png)
+![IMAGE-RANK](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/rank.png)
+![IMAGE-PROFILE](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/profile.png)
+![IMAGE-COMMITTEE](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/committee.png)
+![IMAGE-ADMIN](https://github.com/GitdddCore/Behavior-Score-Management-System/blob/main/TemplateImage/admin.png)
+
 
 ## How to Deploy
 

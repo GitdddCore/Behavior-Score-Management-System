@@ -934,7 +934,7 @@ $topStudents = getStudents(3);
     <div class="container">
         <div class="header">
             <h1>首页</h1>
-            <p>操行分管理系统 | Conduct Score System</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
 
         <div class="search-container">

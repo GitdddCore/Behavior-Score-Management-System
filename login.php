@@ -657,7 +657,7 @@ if (isset($_SESSION['logged_in']) && $_SESSION['logged_in']) {
             </div>
             <h1 class="login-title">操行分管理系统</h1>
             <p class="login-subtitle">
-                Conduct Score System<br>
+                Behavior Score Management System<br>
                 For class use only
             </p>
         </div>

@@ -1150,7 +1150,7 @@ if ($data['success']) {
     <div class="container">
         <div class="header">
             <h1>个人主页</h1>
-            <p>操行分管理系统 | 学生个人信息</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
 
         <?php if (!$student): ?>

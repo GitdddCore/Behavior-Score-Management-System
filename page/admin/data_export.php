@@ -1426,7 +1426,7 @@ function exportAppealsHTMLExcel($pdo) {
         <div class="container">
             <div class="header">
                 <h1>数据导出</h1>
-                <p>操行分管理系统 | Conduct Score System</p>
+                <p>操行分管理系统 | Behavior Score Management System</p>
             </div>
 
             <!-- 导出选项卡片 -->

@@ -1418,7 +1418,7 @@ $search = isset($_GET['search']) ? htmlspecialchars($_GET['search']) : '';
     <div class="container">
         <div class="header">
             <h1>规则管理</h1>
-            <p>操行分管理系统 | Conduct Score System</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
 
         <!-- 操作栏 -->

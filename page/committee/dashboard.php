@@ -1241,7 +1241,7 @@ if (isset($pdo)) {
     <div class="container">
         <div class="header">
             <h1>班管操行分管理页</h1>
-            <p>操行分管理系统 | Conduct Score System</p>
+            <p>操行分管理系统 | Behavior Score Management System</p>
         </div>
         
         <!-- 标签页容器 -->
