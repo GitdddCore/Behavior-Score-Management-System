@@ -44,13 +44,13 @@ function getStudents($limit = null, $search = null) {
         $params = [];
         
         if ($search) {
-            $sql .= " WHERE name LIKE :search OR student_id LIKE :search";
+            $sql .= " WHERE (name LIKE :search OR student_id LIKE :search) AND status = 'active'";
             $params['search'] = '%' . $search . '%';
             // 搜索结果按ID排序
             $sql .= " ORDER BY id ASC";
         } else {
             // 前三名按操行分降序排序
-            $sql .= " ORDER BY current_score DESC";
+            $sql .= " WHERE status = 'active' ORDER BY current_score DESC";
         }
         
         if ($limit) $sql .= " LIMIT $limit";
@@ -934,7 +934,7 @@ $topStudents = getStudents(3);
     <div class="container">
         <div class="header">
             <h1>首页</h1>
-            <p>操行分管理系统 | Behavior Score Management System</p>
+            <p>操行分管理系统 | Conduct Score System</p>
         </div>
 
         <div class="search-container">

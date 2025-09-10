@@ -29,11 +29,11 @@ function validateAccess() {
     try {
         $pdo = $db->getMysqlConnection();
         
-        $stmt = $pdo->prepare("SELECT id FROM students WHERE student_id = :student_id LIMIT 1");
+        $stmt = $pdo->prepare("SELECT id, status FROM students WHERE student_id = :student_id LIMIT 1");
         $stmt->execute(['student_id' => $studentId]);
         $student = $stmt->fetch();
         
-        if (!$student) {
+        if (!$student || $student['status'] === 'inactive') {
             $db->releaseMysqlConnection($pdo);
             header('Location: ../../index.php');
             exit;

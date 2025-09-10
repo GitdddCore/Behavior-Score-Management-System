@@ -205,7 +205,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 // 获取总记录数
                 $count_sql = "SELECT COUNT(*) FROM conduct_records cr 
                              JOIN students s ON cr.student_id = s.id 
-                             {$where_clause}";
+                             {$where_clause} AND s.status = 'active'";
                 $count_stmt = executeQuery($pdo, $count_sql, $params);
                 $total = $count_stmt->fetchColumn();
                 
@@ -216,7 +216,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                               cr.status as record_status
                        FROM conduct_records cr 
                        JOIN students s ON cr.student_id = s.id 
-                       {$where_clause} 
+                       {$where_clause} AND s.status = 'active' 
                        ORDER BY cr.created_at DESC, cr.id DESC
                        LIMIT {$limit} OFFSET {$offset}";
                 
@@ -248,7 +248,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
                 
                 $pdo->beginTransaction();
                 
+                // 筛选出活跃状态的学生ID
+                $active_student_ids = [];
                 foreach ($student_ids as $student_id) {
+                    // 检查学生状态是否为active
+                    $stmt = executeQuery($pdo, "SELECT id FROM students WHERE id = ? AND status = 'active'", [$student_id]);
+                    if ($stmt->fetchColumn()) {
+                        $active_student_ids[] = $student_id;
+                    }
+                }
+                
+                if (empty($active_student_ids)) {
+                    throw new Exception('没有选择有效的学生或所选学生均为停用状态');
+                }
+                
+                foreach ($active_student_ids as $student_id) {
                     $current_score = getStudentScore($pdo, $student_id);
                     $new_score = $current_score + $score_change;
                     

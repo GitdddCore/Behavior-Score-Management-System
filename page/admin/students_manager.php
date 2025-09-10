@@ -283,6 +283,15 @@ function addStudent($name, $student_id, $score, $status, $appeal_permission) {
         
         $stmt->execute();
         
+        // 清空缓存数据库 - 用于数据更新后重新读取
+        try {
+            $db = new Database();
+            $db->clearCacheForDataUpdate();
+        } catch (Exception $cacheError) {
+            error_log('清空Redis缓存失败: ' . $cacheError->getMessage());
+            // 缓存清理失败不影响主要操作，只记录日志
+        }
+        
         releaseDatabaseConnection($pdo);
         return ['success' => true, 'message' => '学生添加成功'];
     } catch(PDOException $e) {
@@ -344,6 +353,15 @@ function updateStudent($id, $name, $student_id, $score, $status, $appeal_permiss
         
         // 提交事务
         $pdo->commit();
+        
+        // 清空缓存数据库 - 用于数据更新后重新读取
+        try {
+            $db = new Database();
+            $db->clearCacheForDataUpdate();
+        } catch (Exception $cacheError) {
+            error_log('清空Redis缓存失败: ' . $cacheError->getMessage());
+            // 缓存清理失败不影响主要操作，只记录日志
+        }
         
         releaseDatabaseConnection($pdo);
         return ['success' => true, 'message' => '学生信息更新成功'];
@@ -490,6 +508,15 @@ function deleteStudent($id) {
         // 提交事务
         $pdo->commit();
         
+        // 清空缓存数据库 - 用于数据更新后重新读取
+        try {
+            $db = new Database();
+            $db->clearCacheForDataUpdate();
+        } catch (Exception $cacheError) {
+            error_log('清空Redis缓存失败: ' . $cacheError->getMessage());
+            // 缓存清理失败不影响主要操作，只记录日志
+        }
+        
         releaseDatabaseConnection($pdo);
         return ['success' => true, 'message' => '学生已删除成功'];
         
@@ -558,6 +585,15 @@ function batchEditStudents($studentIds, $status = null, $appealPermission = null
         
         $pdo->commit();
         
+        // 清空缓存数据库 - 用于数据更新后重新读取
+        try {
+            $db = new Database();
+            $db->clearCacheForDataUpdate();
+        } catch (Exception $cacheError) {
+            error_log('清空Redis缓存失败: ' . $cacheError->getMessage());
+            // 缓存清理失败不影响主要操作，只记录日志
+        }
+        
         $failCount = count($errors);
         $totalCount = $successCount + $failCount;
         
@@ -618,6 +654,15 @@ function resetAllStudentScores() {
         
         // 提交事务
         $pdo->commit();
+        
+        // 清空缓存数据库 - 用于数据更新后重新读取
+        try {
+            $db = new Database();
+            $db->clearCacheForDataUpdate();
+        } catch (Exception $cacheError) {
+            error_log('清空Redis缓存失败: ' . $cacheError->getMessage());
+            // 缓存清理失败不影响主要操作，只记录日志
+        }
         
         releaseDatabaseConnection($pdo);
         return [

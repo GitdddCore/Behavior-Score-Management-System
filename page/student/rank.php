@@ -33,7 +33,7 @@ function getRankingData() {
             // Redis缓存不可用时继续执行SQL查询
         }
         
-        $sql = "SELECT id, name, student_id, current_score FROM students ORDER BY current_score DESC, id ASC";
+        $sql = "SELECT id, name, student_id, current_score FROM students WHERE status = 'active' ORDER BY current_score DESC, id ASC";
         
         $pdo = $db->getMysqlConnection();
         $stmt = $pdo->prepare($sql);

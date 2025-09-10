@@ -154,6 +154,9 @@ Solution: This may be caused by missing dependency files. You need to re-run the
 
 ## Update Log
 
+### 1.1.0 Update
+- Now, disabled students are now excluded from Search results and Rankings, denied access to their Profiles, and their scores records will be hidden.
+
 ### 1.0.0 Update
 - Initial version release
 
